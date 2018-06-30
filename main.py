@@ -68,8 +68,8 @@ def dac_thread():
 
 	while True:
 		try:
-
-			print(etherIP)
+			#etherIP = dac.find_first_dac()
+			print(type(etherIP),etherIP)
 			d = dac.DAC(etherIP)
 			d.play_stream(laser)
 
@@ -218,12 +218,14 @@ if args.laser1 != None:
 	print(args.laser1)
 	lstdgtlaser = args.laser1
 	if lstdgtlaser == 0:
-		etherIP = "127.0.0.1"
+		etherIP = '127.0.0.1'
 	else:
 		etherIP = "192.168.1."+str(lstdgtlaser)
 
+
 else:
-	etherIP = "192.168.1.4"
+	etherIP = '192.168.1.4'
+	
 
 print ("Laser 1 etherIP:",etherIP)
 
@@ -233,7 +235,7 @@ if args.save:
 	WriteSettings()
 
 
-exit(0)
+#exit(0)
 
 # Inits
 	
